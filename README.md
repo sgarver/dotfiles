@@ -1,4 +1,4 @@
-dotfiles
-========
+config
+======
 
-misc configuration files
+My various dotfiles

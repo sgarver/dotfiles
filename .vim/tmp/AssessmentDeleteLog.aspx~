@@ -1,0 +1,98 @@
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="AssessmentDeleteLog.aspx.vb" Inherits="Shp.Web.Secure.Admin.Products.Agencies.Assessment.AssessmentDeleteLog" MasterPageFile="../../../Admin.Master" Trace="False" MaintainScrollPositionOnPostback="true" %>
+<%@ Register Tagprefix="SHP" Tagname="NLevelSelector" Src="/usercontrols/ucNLevelSelector.ascx" %>
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="NestedContent1" runat="Server" >
+    <telerik:RadScriptManager runat="server" ID="RadScriptManager1" EnablePartialRendering="true" />
+    <div id="basic_page">
+         <div class="NLevel_box" id="NLevelBox" runat="server">
+            <div class="NLevel_content">
+                <SHP:NLevelSelector
+                    id="NLevelSelector"
+                    EnterpriseDropdownWidth="562"
+                    BasicLevelDropdownWidth="150"
+                    BasicLevelMemberDropdownWidth="406"
+                    ShowLabels="True"
+                    LabelColor="Black"
+                    LinkColor="Black"
+                    runat="server" />
+            </div>
+        </div>
+        <table>
+            <tr>
+                <td>
+                   <b>Include assessments deleted from:</b>&nbsp;
+                   <telerik:RadDatePicker ID="calSearchDateFrom" runat="server" Width="90px" />
+                   &nbsp;&nbsp;&nbsp;<b>to</b>&nbsp;
+                   <telerik:RadDatePicker ID="calSearchDateTo" runat="server" Width="90px" />
+                </td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td>
+                    <b>Search in:</b>&nbsp;
+                    <asp:DropDownList ID="ddSearchIn" EnableViewState="true" runat="server" style="vertical-align:middle" Width="146px">
+                        <asp:ListItem Value="All" Text="All" Selected="True"></asp:ListItem>
+                        <asp:ListItem Value="PatientID" Text="Patient ID" ></asp:ListItem>
+                        <asp:ListItem Value="FirstName" Text="First Name" ></asp:ListItem>
+                        <asp:ListItem Value="LastName" Text="Last Name" ></asp:ListItem>
+                        <asp:ListItem Value="AssessmentDate" Text="Assessment Date" ></asp:ListItem>
+                        <asp:ListItem Value="AssessmentType" Text="Assessment Type" ></asp:ListItem>
+                        <asp:ListItem Value="AssessmentNo" Text="SHP Assessment No" ></asp:ListItem>
+                        <asp:ListItem Value="DeleteDate" Text="Delete Date" ></asp:ListItem>
+                        <asp:ListItem Value="DeleteBy" Text="Deleted By" ></asp:ListItem>
+                    </asp:DropDownList>
+                    &nbsp;&nbsp;&nbsp;<b>Search for:</b>&nbsp;
+                    <asp:TextBox ID="txtSearchFor" EnableViewState="true" runat="server" style="vertical-align:middle" Width="180px"></asp:TextBox>
+                    <asp:Button ID="btnGOSearch" runat="server" cssClass="button_update" Text="Go" />
+                    <asp:Button ID="btnReset" runat="server" cssClass="button_update" Text="Reset" />
+                </td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td>
+                    <asp:datagrid
+                        id="dgAssessmentDeleteLog"
+                        width="720px"
+                        runat="server"
+                        AlternatingItemStyle-CssClass="SHPPortalAltRow"
+                        CellPadding="3"
+                        GridLines="Both"
+                        AutoGenerateColumns="False"
+                        AllowSorting="True"
+                        OnSortCommand="dgAssessmentDeleteLog_SortCommand">
+                        <PagerStyle Mode="NumericPages" HorizontalAlign="Center" />
+                        <HeaderStyle ForeColor="White" BackColor="#003466" BorderColor="#003466" />
+                        <ItemStyle BorderColor="#cccccc" />
+                        <AlternatingItemStyle BackColor="#eeeeee" BorderColor="#cccccc" />
+                        <Columns>
+                            <asp:BoundColumn DataField="M0020_PAT_ID" HeaderText="PAT ID" SortExpression="M0020_PAT_ID">
+                                <ItemStyle Wrap="False"></ItemStyle>
+                            </asp:BoundColumn>
+                            <asp:BoundColumn DataField="M0040_PAT_LNAME" HeaderText="L NAME" SortExpression="M0040_PAT_LNAME">
+                                <ItemStyle Wrap="False"></ItemStyle>
+                            </asp:BoundColumn>
+                            <asp:BoundColumn DataField="M0040_PAT_FNAME" HeaderText="F NAME" SortExpression="M0040_PAT_FNAME">
+                                <ItemStyle Wrap="False"></ItemStyle>
+                            </asp:BoundColumn>
+                            <asp:BoundColumn DataField="M0090_INFO_COMPLETED_DT" HeaderText="M0090" SortExpression="M0090_INFO_COMPLETED_DT">
+                                <ItemStyle Wrap="False"></ItemStyle>
+                            </asp:BoundColumn>
+                            <asp:BoundColumn DataField="Assessment_Reason_Desc" HeaderText="M0100" SortExpression="Assessment_Reason_Desc">
+                                <ItemStyle Wrap="False"></ItemStyle>
+                            </asp:BoundColumn>
+                            <asp:BoundColumn DataField="Pk_AssessmentNo" HeaderText="SHP Assess #" SortExpression="Pk_AssessmentNo">
+                                <ItemStyle Wrap="False"></ItemStyle>
+                            </asp:BoundColumn>
+                            <asp:BoundColumn DataField="Deleted_Dt" HeaderText="Deleted" SortExpression="Deleted_Dt">
+                                <ItemStyle Wrap="False"></ItemStyle>
+                            </asp:BoundColumn>
+                            <asp:BoundColumn DataField="Delete_User_Name" HeaderText="Requested By" SortExpression="Delete_User_Name">
+                                <ItemStyle Wrap="False"></ItemStyle>
+                            </asp:BoundColumn>
+                        </Columns>
+                    </asp:datagrid>
+                </td>
+            </tr>
+        </table>
+    </div>
+</asp:Content>

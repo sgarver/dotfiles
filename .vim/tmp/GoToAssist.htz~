@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>GoToAssist</title>   
+    <meta name="robots" content="noindex, nofollow" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript">
+        function setJS() {
+            if (document.QuestionEntry.Email.value == '') {
+                alert('Please enter your email address.');
+                document.QuestionEntry.Email.focus();
+                return false;
+            }
+
+            if (!checkEmail(document.QuestionEntry.Email.value)) {
+                alert('Please enter a valid email address.');
+                document.QuestionEntry.Email.value = '';
+                document.QuestionEntry.Email.focus();
+                return false;
+            }
+
+            if (document.QuestionEntry.Question.value == '') {
+                alert('Please enter your code.');
+                document.QuestionEntry.Question.focus();
+                return false;
+            }
+
+            document.QuestionEntry.JavaScript.value = "true";
+            document.QuestionEntry.submit();
+
+        }
+
+        function checkEmail(email) {
+            var filter = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+
+            if (!filter.test(email)) {
+                return false;
+            }
+
+            return true;
+        }
+
+        $(document).ready(function () {
+            $("#Question").keyup(function (event) {
+                if (event.keyCode == 13) {
+                    $("#Start").click();
+                }
+            });
+        });
+                
+    </script>
+</head>
+<body>
+<form action="https://broker.gotoassist.com/h/shpdata" method="get" name="QuestionEntry" target="_blank">
+    <input type="hidden" name="Portal" value="shpdata" />
+    <input type="hidden" name="Target" value="ds/queryPost.flow" />
+    <input type="hidden" name="Template" value="ds/phoneModeRedemption.tmpl" />
+    <input type="hidden" name="JavaScript" value="false" />
+    <input type="hidden" name="Form" value="shpbox" />
+    
+    <table style="width:200px; background-color:#eee; font-size: 14px; font-family: Kievit, Trebuchet MS, Sans-Serif; padding: 10px; border: solid 1px black;">
+        <tr><td colspan="2">Enter Your Email Address and Meeting ID to Start:</td></tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+		<tr><td colspan="2">Email:</td></tr>
+		<tr><td colspan="2"><input type="text" maxlength="200" name="Email" style="width:150px;" /></td></tr>
+		<tr><td colspan="2">Meeting ID:</td></tr>
+		<tr><td><input type="text" id="Question" name="Question" size="24" style="width:100px;" /></td></tr>	
+		<tr><td colspan="2"><input type="button" id="Start" value="Start" onclick="setJS();" /></td></tr>				
+	</table>
+</form>
+</body>
+</html>
+

@@ -1,0 +1,231 @@
+#content {
+  float: left;
+  margin-bottom: 15px;
+  padding: 20px 0 0 0;
+}
+#content td {
+  vertical-align: top;
+}
+#basic_page {
+  min-width: 720px;
+}
+#basic_page li,
+#basic_page p {
+  line-height: 1.4em;
+}
+#accordion {
+  width: 229px;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+}
+#accordion a {
+  display: block;
+}
+#accordion ul {
+  padding: 0 5px 10px 28px;
+  margin: 0;
+}
+#accordion ul li {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 10px 0;
+}
+#accordion ul.tree_expand {
+  padding: 0 0 0 12px;
+}
+#accordion ul.tree_expand li {
+  padding: 8px 0 0 0;
+}
+.accordion_expanded {
+  background-color: white;
+}
+
+#config_view_input {
+  width: 250px;
+}
+
+/***********/
+/* BUTTONS */
+/***********/
+.ui-button {
+  margin: 5px 5px 10px 0;
+  padding: 5px 10px;
+  line-height: 1.4;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.ui-button:hover {
+  cursor: pointer;
+}
+.ui-button:focus {
+  border-color: #777;
+  outline: 0;
+  background: #fefefe;
+  /* Old browsers */
+
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZlZmVmZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQ5JSIgc3RvcC1jb2xvcj0iI2JmYmZiZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkMWQxZDEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top, #fefefe 0%, #bfbfbf 49%, #d1d1d1 100%);
+  /* FF3.6+ */
+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fefefe), color-stop(49%, #bfbfbf), color-stop(100%, #d1d1d1));
+  /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(top, #fefefe 0%, #bfbfbf 49%, #d1d1d1 100%);
+  /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(top, #fefefe 0%, #bfbfbf 49%, #d1d1d1 100%);
+  /* Opera 11.10+ */
+
+  background: -ms-linear-gradient(top, #fefefe 0%, #bfbfbf 49%, #d1d1d1 100%);
+  /* IE10+ */
+
+  background: linear-gradient(to bottom, #fefefe 0%, #bfbfbf 49%, #d1d1d1 100%);
+  /* W3C */
+
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#fefefe', endColorstr='#d1d1d1', GradientType=0);
+  /* IE6-8 */
+
+}
+input[type="button"].grey_gradient {
+  color: #333;
+  border: 1px solid #777;
+  padding: 1px 5px;
+  margin: 2px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+input[type="button"].grey_gradient:hover {
+  background: #cccccc;
+  color: black;
+}
+input[type="button"].grey_gradient:active,
+input[type="button"].grey_gradient:focus {
+  border: 1px solid black;
+  outline: 0;
+}
+input[type="image"]:active,
+input[type="image"]:focus {
+  outline: 0;
+}
+.ui-button-text-only .ui-button-text {
+  padding: 0;
+}
+ul.icons li.ui-state-default,
+.icons > div.ui-state-default,
+.tab_button.overflow {
+  background: #cccccc url(/usercontrols/images/tab_background.png) 0px 0px repeat-x;
+}
+.add_view_button {
+  margin-top: 7px;
+}
+.ui-button.button_update.thin {
+  padding: 3px 4px;
+  margin-top: 2px;
+  line-height: 1em;
+}
+#basic_hospice_list .button_update.thin {
+  margin: 0;
+}
+input.tab_title {
+  width: 200px;
+}
+.tab_button {
+  margin-top: 7px;
+  margin-right: 2px;
+  border-bottom: 0 !important;
+  padding: 0;
+  width: 20px;
+  height: 21px;
+  float: left;
+  -webkit-border-radius: 4px 4px 0 0;
+  -moz-border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0;
+}
+.tab_button.overflow {
+  height: 27px;
+  margin-top: 1px;
+}
+#add_widget_button {
+  margin-left: 10px;
+}
+#add_widget_dialog button {
+  float: left;
+}
+input[type="button"].shp_tree_grid_button {
+  margin-top: 0;
+}
+.hospice_search_by_date input[type="button"] {
+  color: #333;
+  border: 1px solid #777;
+  padding: 1px 5px;
+  margin: 2px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background: #fcfcfc;
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#fcfcfc), to(#cfcfcf));
+  background: -webkit-linear-gradient(#fcfcfc, #cfcfcf);
+  background: -moz-linear-gradient(#fcfcfc, #cfcfcf);
+  background: -ms-linear-gradient(#fcfcfc, #cfcfcf);
+  background: -o-linear-gradient(#fcfcfc, #cfcfcf);
+  background: linear-gradient(#fcfcfc, #cfcfcf);
+}
+.hospice_search_by_date input[type="button"]:hover,
+.hospice_search_by_date input[type="button"]:focus {
+  outline: 0;
+  border-color: #333;
+}
+#hospice_status_bar .button_update {
+  margin: 0;
+}
+.ui-dialog .ui-dialog-buttonpane {
+  margin: 0;
+}
+#hospice_content .button_update {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+.no-cssgradients .hospice_search_by_date input[type="button"] {
+  background: url(/usercontrols/images/tab_background.png) repeat-x;
+}
+#hospice_symptom_assessments .button_update {
+  margin: 0;
+}
+#hospice_symptom_assessments .button_update.red {
+  background: #d7818e;
+  border-color: #c00000;
+  color: black;
+}
+#hospice_symptom_assessments .button_update.green {
+  background: #8CC080;
+  border-color: #008000;
+  color: black;
+}
+#hospice_symptom_assessments .button_update.orange {
+  background: #ffcc7f;
+  border-color: #ffa02f;
+  color: black;
+}
+
+.blur {
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  filter: blur(3px);
+}
+
+.fadein {
+  -webkit-transform: scale(0.7);
+  -moz-transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  transform: scale(0.7);
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
