@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/sgarver/.oh-my-zsh/themes'
-let g:netrw_dirhist_2='/Users/sgarver/.oh-my-zsh/plugins/gnu-utils'
-let g:netrw_dirhist_3='/Users/sgarver/.oh-my-zsh/plugins/terminalapp'
-let g:netrw_dirhist_4='/Users/sgarver/.oh-my-zsh/plugins/fasd'
-let g:netrw_dirhist_5='/Users/sgarver/.oh-my-zsh/plugins/knife'
-let g:netrw_dirhist_6='/Users/sgarver/.oh-my-zsh/plugins/sprunge'
-let g:netrw_dirhist_7='/home/stiven/.fontconfig'
