@@ -1,7 +1,4 @@
 #!/bin/bash
-echo "WARNING: Your system will reboot once this script has completed!\n";
-sleep 3;
-
 sudo apt-get update;
 sudo apt install ubuntu-sdk git vim vim-gtk build-essential ruby unity-tweak-tool mplayer nvidia-331-updates zsh python-pip ranger htop weechat ttf-mscorefonts-installer;
 
