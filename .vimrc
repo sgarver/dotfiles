@@ -16,58 +16,31 @@ set t_Co=256
 syntax enable
 set background=dark
 
-" do not keep a backup files 
-"set nobackup
-"set nowritebackup
+" do not keep a backup files
+set nobackup
+set nowritebackup
 
-colorscheme xoria256
+let base16colorspace=256  " Access colors present in 256 colorspace
+colorscheme base16-ashes
 
 if has("gui_running")
   if has("gui_gtk2")
-    colorscheme solarized
-    set guifont=Dejavu\ Sans\ Mono\ 9
-  elseif has("gui_gtk3")
-    colorscheme solarized
-    set guifont=Dejavu\ Sans\ Mono\ 9
+    colorscheme base16-ashes
+    set guifont=Ubuntu\ Mono\ 10
   elseif has("gui_macvim")
-    colorscheme solarized
-    " set guifont=Menlo\ Regular:h14
-  elseif has("gui_win32")
-    set guifont=Consolas:h11:cANSI
+    colorscheme base16-ashes
   endif
 endif
 
 let s:uname = system("echo -n \"$(uname)\"")
 
-" Set syntax for specify format
-set ft=txt
-au BufWinEnter *.vb set ft=vb
-au BufWinEnter *.aspx set ft=html
-au BufWinEnter *.master set ft=html
-au BufWinEnter *.txt set ft=txt
-au BufRead,BufNewFile *.js set filetype=javascript
-au BufRead,BufNewFile *.handlebars set filetype=javascript
-au BufRead,BufNewFile *.json set filetype=javascript
-au BufNewFile,BufRead *  setfiletype txt
-
 set hlsearch
 set incsearch
-
-" mapping ctl-s-p to toggle spelling 
-:map <C-S-P> :setlocal spell! spelllang=en_us<CR>
-
-" mapping ctl-n ctl-n to show and hide line numbers
-:nmap <C-N><C-N> :set invnumber<CR>
-
-" target style line and column highlighting
-"au WinLeave * set nocursorline nocursorcolumn
-"au WinEnter * set cursorline cursorcolumn
-"set cursorline cursorcolumn
 set cursorcolumn
 
 set nocompatible               " be iMproved
 
-filetype plugin indent on     " required! 
+filetype plugin indent on     " required!
 
 set wildmenu
 set cmdheight=1
@@ -85,14 +58,7 @@ if argc() == 2
 endif
 
 " minibufexplorer settings
-let g:miniBufExplMapWindowNavVim = 1 
-let g:miniBufExplMapCTabSwitchBufs = 1 
-let g:miniBufExplModSelTarget = 1 
-
-" HTML TIDY MAPPING
-:vmap ,x :!tidy -q -i --show-errors 0<CR>
-
-set go-=T
-
-execute pathogen#infect()
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1
 
