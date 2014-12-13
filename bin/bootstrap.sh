@@ -8,6 +8,16 @@ chsh -s /bin/zsh;
 
 sudo update-alternatives --config x-cursor-theme;
 
+sudo sed -i 's/f07746/95AEC7/g' /usr/share/themes/Ambiance/gtk-3.0/gtk-main.css
+sudo sed -i 's/f07746/95AEC7/g' /usr/share/themes/Ambiance/gtk-3.0/settings.ini
+sudo sed -i 's/f07746/95AEC7/g' /usr/share/themes/Ambiance/gtk-2.0/gtkrc
+#sudo convert \( glyphicons-halflings.png -alpha extract \) -background "#95AEC7" -alpha shape /usr/share/unity/:
+
+gsettings set org.gnome.desktop.interface document-font-name 'Sans 11'
+gsettings set org.gnome.desktop.interface font-name 'Ubuntu 10'
+gsettings set org.gnome.desktop.interface monospace-font-name 'Ubuntu Mono 10'
+gsettings set org.gnome.nautilus.desktop font 'Ubuntu 10'
+
 git config --global user.email "stepgar@gmail.com";
 git config --global user.name "Stephen Garver";
 git config --global push.default simple;
