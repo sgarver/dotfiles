@@ -21,6 +21,12 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+" hide gui stuff
+:set guioptions-=m  "remove menu bar
+:set guioptions-=T  "remove toolbar
+:set guioptions-=r  "remove right-hand scroll bar
+:set guioptions-=L  "remove left-hand scroll bar
+
 let base16colorspace=256  " Access colors present in 256 colorspace
 colorscheme base16-ashes
 
