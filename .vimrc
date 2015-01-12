@@ -16,9 +16,10 @@ set t_Co=256
 syntax enable
 set background=dark
 
-" do not keep a backup files
+" do not keep swp or a backup files
 set nobackup
 set nowritebackup
+set noswapfile
 
 let base16colorspace=256  " Access colors present in 256 colorspace
 colorscheme base16-ashes

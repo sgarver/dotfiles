@@ -80,6 +80,6 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-ashes.dark.sh"
+BASE16_SHELL="$HOME/bin/base16-ashes.dark.sh"
 [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
