@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo apt-get update;
-sudo apt install vim vim-gtk build-essential ruby unity-tweak-tool mplayer zsh python-pip ranger htop weechat ttf-mscorefonts-installer;
+sudo apt install -y vim vim-gtk build-essential ruby unity-tweak-tool mplayer zsh python-pip ranger htop weechat ttf-mscorefonts-installer;
 
 sudo pip install mps-youtube;
 
