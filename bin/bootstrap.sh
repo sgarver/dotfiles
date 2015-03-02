@@ -29,6 +29,11 @@ wget -E http://media.steampowered.com/client/installer/steam.deb && \
 sudo dpkg -i steam.deb ; \
 sudo apt-get install -yf && \
 
+
+sudo add-apt-repository ppa:webupd8team/java -y;
+sudo apt update;
+sudo apt install -y oracle-java8-installer;
+
 echo "Bootstrap is complete: time to rock!\n";
 exit 0
 
