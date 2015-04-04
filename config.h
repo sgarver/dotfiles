@@ -1,25 +1,18 @@
 /* See LICENSE file for copyright and license details. */
 
+#include "gaplessgrid.c"
+#include "bstackhoriz.c"
+
 /* appearance */
-//static const char font[]            = "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*";
-//static const char normbordercolor[] = "#444444";
-//static const char normbgcolor[]     = "#222222";
-//static const char normfgcolor[]     = "#bbbbbb";
-//static const char selbordercolor[]  = "#005577";
-//static const char selbgcolor[]      = "#005577";
-//static const char selfgcolor[]      = "#eeeeee";
-
-// new colors
 static const char font[]            = "-*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*";
-static const char normbordercolor[] = "#000000";
-static const char normbgcolor[]     = "#222222";
+static const char normbordercolor[] = "#1c2023";
+static const char normbgcolor[]     = "#1c2023";
 static const char normfgcolor[]     = "#bbbbbb";
-static const char selbordercolor[]  = "#6095c5";
-static const char selbgcolor[]      = "#222222";
-static const char selfgcolor[]      = "#ffffff";
-
+static const char selbordercolor[]  = "#AE95C7";
+static const char selbgcolor[]      = "#1c2023";
+static const char selfgcolor[]      = "#AE95C7";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int snap      = 9;       /* snap pixel */
+static const unsigned int snap      = 32;       /* snap pixel */
 static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
@@ -37,14 +30,13 @@ static const float mfact      = 0.55; /* factor of master area size [0.05..0.95]
 static const int nmaster      = 1;    /* number of clients in master area */
 static const Bool resizehints = True; /* True means respect size hints in tiled resizals */
 
-#include "fibonacci.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
+    { "###",      gaplessgrid },
+    { "===",      bstackhoriz },
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
- 	{ "[@]",      spiral },
- 	{ "[\\]",      dwindle },
 };
 
 /* key definitions */
@@ -77,9 +69,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_s,      setlayout,      {.v = &layouts[3]} },
+	{ MODKEY,                       XK_g,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY|ShiftMask,             XK_b,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[3]} },
+	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },

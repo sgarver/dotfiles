@@ -5,13 +5,13 @@ Xft.hinting:    true
 Xft.rgba:       none
 Xft.hintstyle:  hintslight
 
-xterm*font:                           -*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*
-xterm*boldFont:                       -*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*
+!URxvt*font:                           -*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*
+!URxvt*boldFont:                       -*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*
 URxvt*font:                           xft:Terminus:size=8
 URxvt*boldFont:                       xft:Terminus:size=8
 
 URxvt.depth: 32
-URxvt.background: #222222
+URxvt.background: #1c2023
 URxvt*foreground: #ffffff
 URxvt*geometry:   110x37
 URxvt*externalBorder:                 0

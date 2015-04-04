@@ -15,7 +15,12 @@ fi
 
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
-xrandr --output DVI-I-2 --left-of DVI-I-3 --rotate left
+xrandr --output HDMI-0 --right-of DVI-I-1 --rotate left
+
+while true; do
+   xsetroot -name "$( date +"%F %R" )"
+   sleep 1m    # Update time every minute
+done &
 
 exec dwm
 
