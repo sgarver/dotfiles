@@ -45,7 +45,7 @@ ZSH_THEME="lambda2"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git archlinux)
+plugins=(git yum)
 
 source $ZSH/oh-my-zsh.sh
 

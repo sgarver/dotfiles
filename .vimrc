@@ -1,5 +1,5 @@
 set expandtab
-set tabstop=4 
+set tabstop=4
 set shiftwidth=4
 set number
 set list
@@ -30,24 +30,24 @@ set noswapfile
 let base16colorspace=256  " Access colors present in 256 colorspace
 colorscheme base16-ashes
 
-if has("gui_running")
-  if has("gui_gtk2")
-    colorscheme base16-ashes
-    set guifont=Ubuntu\ Mono\ 10
-  elseif has("gui_macvim")
-    colorscheme base16-ashes
-  endif
-endif
+colorscheme base16-ashes
+set guifont=Liberation\ Mono\ for\ Powerline\ Regular\ 9
 
-let s:uname = system("echo -n \"$(uname)\"")
+"if has("gui_running")
+"  if has("gui_gtk2")
+"    colorscheme base16-ashes
+"    set guifont=Ubuntu\ Mono\ 10
+"  elseif has("gui_macvim")
+"    colorscheme base16-ashes
+"  endif
+"endif
 
 set hlsearch
 set incsearch
 set cursorcolumn
 
 set nocompatible               " be iMproved
-
-filetype plugin indent on     " required!
+filetype plugin indent on      " required!
 
 set wildmenu
 set cmdheight=1
@@ -56,16 +56,46 @@ set ruler
 set showmode
 set showcmd
 " fileformat, encoding, type, buffer num, RO/HELP/PREVIEW, mod flag, filepath; spacer; line pos, line/total, percentage
-set statusline=%{&ff}\ \%{&fenc}\ \b%1.3n\ \%#StatusFTP#\%Y\
-\%#StatusRO#\%R\ \%#StatusHLP#\%H\ \%#StatusPRV#\%W\ \%#StatusModFlag#\%M\ \%#StatusLine#\%f\%=\%1.7c\ \%1.7l/%L\ \%p%%
-setglobal fileformat=dos
+"set statusline=%{&ff}\ \%{&fenc}\ \b%1.3n\ \%#StatusFTP#\%Y\
+"\%#StatusRO#\%R\ \%#StatusHLP#\%H\ \%#StatusPRV#\%W\ \%#StatusModFlag#\%M\ \%#StatusLine#\%f\%=\%1.7c\ \%1.7l/%L\ \%p%%
+"setglobal fileformat=dos
 
 if argc() == 2
   silent all
 endif
 
-" minibufexplorer settings
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
+" vundle stuff
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-airline'
+
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
