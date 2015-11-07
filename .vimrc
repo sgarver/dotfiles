@@ -28,19 +28,9 @@ set noswapfile
 :set guioptions-=L  "remove left-hand scroll bar
 
 let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme base16-ashes
 
+"colorscheme xoria256
 colorscheme base16-ashes
-set guifont=Liberation\ Mono\ for\ Powerline\ Regular\ 9
-
-"if has("gui_running")
-"  if has("gui_gtk2")
-"    colorscheme base16-ashes
-"    set guifont=Ubuntu\ Mono\ 10
-"  elseif has("gui_macvim")
-"    colorscheme base16-ashes
-"  endif
-"endif
 
 set hlsearch
 set incsearch
