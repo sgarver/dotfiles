@@ -1,7 +1,6 @@
 #!/bin/bash
 sudo apt update && sudo apt upgrade
-sudo apt install nvidia-367
-sudo apt-get install -y --no-install-recommends linux-image-extra-$(uname -r) vim git zsh htop build-essential wget apt-transport-https ca-certificates curl software-properties-common
+sudo apt-get install -y --no-install-recommends nvidia-367 linux-image-extra-$(uname -r) vim git zsh htop build-essential wget apt-transport-https ca-certificates curl software-properties-common
 
 # docker
 curl -fsSL https://apt.dockerproject.org/gpg | sudo apt-key add -
@@ -17,6 +16,7 @@ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/to
 # pia
 cd Downloads
 wget https://installers.privateinternetaccess.com/download/pia-v66-installer-linux.tar.gz
+echo 60e9b8f631a76ca84f139a602f241006d4493188439b1927c09963226357fa72
 sha256sum pia-v66-installer-linux.tar.gz 
 tar zxvf pia-v66-installer-linux.tar.gz
 sh ./pia-v66-installer-linux.sh 
