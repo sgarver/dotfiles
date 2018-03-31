@@ -1,7 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='C:/Users/sgarver/Perforce'
-let g:netrw_dirhist_2='C:/Users/sgarver'
-let g:netrw_dirhist_3='C:/Users/sgarver/.dnx'
-let g:netrw_dirhist_4='C:/Users/sgarver'
-let g:netrw_dirhist_5='C:/Users'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/stiv3n/.dropbox'
+let g:netrw_dirhist_2='/home/stiv3n/.dropbox-dist'
+let g:netrw_dirhist_3='/home/stiv3n/.dropbox-dist/dropbox-lnx.x86_64-46.3.59'
+let g:netrw_dirhist_4='/home/stiv3n/Dropbox/dev/Aida/packages/aidaios/app'
