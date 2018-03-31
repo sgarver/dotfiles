@@ -1,22 +1,21 @@
 
-set backspace=2
-syntax on
+colorscheme lucius
 filetype indent on
 set autoindent
-set smartindent
-filetype indent on
-set number
-colorscheme lucius
-set nobackup
-set paste
-set cursorline
 set background=dark
+set backspace=2
+set cursorline
 set expandtab
-set tabstop=4
-set shiftwidth=4
-set listchars=eol:¬,tab:>·,trail:·,extends:>,precedes:<
 set list
+set listchars=eol:¬,tab:>·,trail:·,extends:>,precedes:<
+set nobackup
 set nowrap
+set number
+set paste
+set shiftwidth=4
+set smartindent
+set tabstop=4
+syntax on
 
 execute pathogen#infect()
 
