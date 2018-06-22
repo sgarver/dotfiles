@@ -8,7 +8,7 @@
 
 # custom stuff
 OPTIONS=race:elf,gender:male,role:Ranger
-OPTIONS=showrace:true,decgraphics,hilite_pet
+OPTIONS=showrace,decgraphics,hilite_pet
 OPTIONS=autopickup
 OPTIONS=pickup_types:$?!/(
 OPTIONS=pickup_burden:unencumbered
