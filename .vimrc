@@ -1,4 +1,3 @@
-
 colorscheme lucius
 filetype indent on
 nmap <silent> <C-P> :Files<CR>
@@ -17,6 +16,7 @@ set number
 set paste
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 syntax on
+<<<<<<< HEAD
 
 
 " Specify a directory for plugins
@@ -36,3 +36,5 @@ call plug#end()
 
 
 
+=======
+>>>>>>> 5c624a0ef56aac8da74114a360e3639d7b3e11d7
