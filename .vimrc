@@ -1,4 +1,4 @@
-colorscheme lucius
+
 filetype indent on
 nmap <silent> <C-P> :Files<CR>
 set autoindent
@@ -16,8 +16,6 @@ set number
 set paste
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 syntax on
-<<<<<<< HEAD
-
 
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
@@ -26,7 +24,6 @@ syntax on
 call plug#begin('~/.vim/plugged')
 
 Plug 'jonathanfilip/vim-lucius'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'szw/vim-maximizer'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -34,7 +31,4 @@ Plug 'junegunn/fzf.vim'
 " Initialize plugin system
 call plug#end()
 
-
-
-=======
->>>>>>> 5c624a0ef56aac8da74114a360e3639d7b3e11d7
+colorscheme lucius
