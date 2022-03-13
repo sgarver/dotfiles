@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/stiv3n/.dropbox'
-let g:netrw_dirhist_2='/home/stiv3n/.dropbox-dist'
-let g:netrw_dirhist_3='/home/stiv3n/.dropbox-dist/dropbox-lnx.x86_64-46.3.59'
-let g:netrw_dirhist_4='/home/stiv3n/Dropbox/dev/Aida/packages/aidaios/app'
