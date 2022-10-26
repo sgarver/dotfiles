@@ -38,6 +38,7 @@ call plug#end()
 colorscheme paramount
 
 set autoindent
+set smartindent
 set autoread
 set background=dark
 set backspace=2
