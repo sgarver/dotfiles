@@ -1,41 +1,36 @@
 call plug#begin()
 
-Plug 'gabrielelana/vim-markdown'
-Plug 'cakebaker/scss-syntax.vim'
-"Plug 'yuezk/vim-js'
-Plug 'maxmellon/vim-jsx-pretty'
-"Plug 'szw/vim-maximizer'
-Plug 'folke/zen-mode.nvim'
-
-
-Plug 'williamboman/mason.nvim'
-Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
 
+" autocompletion
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
 
-
-" telescope and dependencies
-Plug 'sharkdp/fd'
-Plug 'BurntSushi/ripgrep'
-Plug 'nvim-treesitter/nvim-treesitter'
+" telescope
+Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'BurntSushi/ripgrep'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
-" or                                , { 'branch': '0.1.x' }
 
-Plug 'romainl/Apprentice'
-Plug 'hardselius/warlock'
-Plug 'sainnhe/edge'
-Plug 'jonathanfilip/lucius'
-Plug 'arzg/vim-substrata'
+" dotnet
+Plug 'OmniSharp/Omnisharp-vim'
+
+" colors
+"Plug 'arzg/vim-substrata'
 Plug 'cocopon/iceberg.vim'
-Plug 'owickstrom/vim-colors-paramount'
-Plug 'rebelot/kanagawa.nvim'
+"Plug 'hardselius/warlock'
+"Plug 'jonathanfilip/lucius'
+"Plug 'owickstrom/vim-colors-paramount'
+"Plug 'rebelot/kanagawa.nvim'
+"Plug 'romainl/Apprentice'
+"Plug 'sainnhe/edge'
 
 call plug#end()
 
-colorscheme paramount
+colorscheme iceberg
 
 set autoindent
 set smartindent
@@ -72,13 +67,6 @@ command! DestroyTabs %s/\t/    /g
 " netrw
 let g:netrw_list_hide='.*\.ts$'
 
-lua require('lspconfig').tsserver.setup{}
-lua require('lspconfig').gopls.setup{}
-lua require('lspconfig').sumneko_lua.setup{}
-lua require('lspconfig').vimls.setup{}
-lua require("mason").setup()
-
-
 let mapleader = ";"
 
 nmap <silent> <leader>s :set spell!<CR>
@@ -92,7 +80,5 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 " intellisense
 nnoremap <leader>? <cmd>lua vim.lsp.buf.hover()<cr>
 
-autocmd vimenter * hi Normal guibg=NONE term=NONE cterm=NONE ctermbg=NONE
-autocmd vimenter * hi CursorLineNr cterm=NONE
-
+lua require('settings')
 

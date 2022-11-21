@@ -1,3 +1,4 @@
 
 bundle/
-
+nvim/autoload/
+nvim/colors/
