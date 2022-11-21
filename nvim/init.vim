@@ -61,7 +61,7 @@ filetype indent on
 syntax on
 
 command! CopyPathToFile let @+ = expand('%:p')
-command! EchoPathToFile echo expand('%:p')
+command! PathToFile echo expand('%:p')
 command! DestroyTabs %s/\t/    /g
 
 " netrw
