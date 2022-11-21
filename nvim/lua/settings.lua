@@ -17,6 +17,13 @@ require('lspconfig').tsserver.setup{
     end,
 }
 
+require('lspconfig').cssls.setup {
+    capabilities = capabilities,
+    on_attach = function() print('LSP Attached: cssls')
+        setKeyMaps() 
+    end,
+}
+
 -- golang
 require('lspconfig').gopls.setup{
     capabilities = capabilities,
