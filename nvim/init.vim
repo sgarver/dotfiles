@@ -1,6 +1,9 @@
+
 call plug#begin()
 
+" lsp
 Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/mason.nvim'
 
 " autocompletion
 Plug 'hrsh7th/nvim-cmp'
@@ -18,20 +21,33 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 " dotnet
 Plug 'OmniSharp/Omnisharp-vim'
 
+" debugging
+Plug 'puremourning/vimspector'
+
 " colors
-"Plug 'arzg/vim-substrata'
 Plug 'cocopon/iceberg.vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'jonathanfilip/vim-lucius'
+"Plug 'arzg/vim-substrata'
 "Plug 'hardselius/warlock'
-"Plug 'jonathanfilip/lucius'
 "Plug 'owickstrom/vim-colors-paramount'
 "Plug 'rebelot/kanagawa.nvim'
 "Plug 'romainl/Apprentice'
 "Plug 'sainnhe/edge'
 
+"statusline
+Plug 'itchyny/lightline.vim'
+Plug 'popkirby/lightline-iceberg'
+
 call plug#end()
 
 colorscheme iceberg
 
+let g:lightline = {}
+let g:lightline.colorscheme = 'iceberg'
+
+
+set encoding=utf-8
 set autoindent
 set smartindent
 set autoread
@@ -39,8 +55,9 @@ set background=dark
 set backspace=2
 set cursorline
 set hlsearch
+set laststatus=3
 set list
-set listchars=eol:¬,tab:<->,trail:·,extends:+,precedes:+
+set listchars=eol:¬,tab:»\ ,trail:·,extends:+,precedes:+
 set mouse=a
 set nobackup
 set nospell
@@ -48,14 +65,16 @@ set noswapfile
 set nowrap
 set number
 set nopaste
+set noshowmode
 set showmatch
 set splitbelow
 set splitright
-set statusline=%t%m
 set t_Co=256
 set tabstop=4 shiftwidth=4 expandtab
 set termguicolors
 
+highlight WinSeparator guibg=none
+highlight WinSeparator guifg=#2e313f
 
 filetype indent on
 syntax on
@@ -79,6 +98,10 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " intellisense
 nnoremap <leader>? <cmd>lua vim.lsp.buf.hover()<cr>
+
+" debugging
+let g:vimspector_enable_mappings = 'HUMAN'
+let g:OmniSharp_server_use_net6 = 1
 
 lua require('settings')
 

@@ -9,18 +9,51 @@ require('telescope').setup{
 
 require('telescope').load_extension('fzf')
 
+-- lua
+require('lspconfig').sumneko_lua.setup {
+    capabilities = capabilities,
+    on_attach = function() print('LSP Attached: sumneko_lua')
+        setKeyMaps()
+    end,
+    settings = {
+        Lua = {
+            runtime = {
+                -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+                version = 'LuaJIT',
+            },
+            diagnostics = {
+                -- Get the language server to recognize the `vim` global
+                globals = {'vim'},
+            },
+            workspace = {
+                -- Make the server aware of Neovim runtime files
+                library = vim.api.nvim_get_runtime_file("", true),
+                checkThirdParty = false,
+            },
+            -- Do not send telemetry data containing a randomized but unique identifier
+            telemetry = {
+                enable = false,
+            },
+        },
+    },
+}
+
+-- install and manage LSP servers, DAP servers, linters, and formatters
+require('mason').setup()
+
 -- javascript
 require('lspconfig').tsserver.setup{
     capabilities = capabilities,
     on_attach = function() print('LSP Attached: tsserver')
-        setKeyMaps() 
+        setKeyMaps()
     end,
 }
 
+-- css
 require('lspconfig').cssls.setup {
     capabilities = capabilities,
     on_attach = function() print('LSP Attached: cssls')
-        setKeyMaps() 
+        setKeyMaps()
     end,
 }
 
@@ -28,12 +61,13 @@ require('lspconfig').cssls.setup {
 require('lspconfig').gopls.setup{
     capabilities = capabilities,
     on_attach = function() print('LSP Attached: gopls')
-        setKeyMaps() 
+        setKeyMaps()
     end,
 }
 
+
 -- dotnet
-require'lspconfig'.omnisharp.setup {
+require('lspconfig').omnisharp.setup {
     cmd = { "dotnet", "/home/tv3n/tools/omnisharp-linux-x64-net6.0/OmniSharp.dll" },
 
     -- Enables support for reading code style, naming convention and analyzer
@@ -73,7 +107,7 @@ require'lspconfig'.omnisharp.setup {
 
     capabilities = capabilities,
     on_attach = function() print('LSP Attached: omnisharp')
-       setKeyMaps() 
+       setKeyMaps()
     end,
 }
 
@@ -118,6 +152,24 @@ cmp.setup.filetype('gitcommit', {
     })
 })
 
+--[[
+-- fix me!!!
+require('nvim-dap-virtual-text').setup()
 
+-- golang debugging
+require('dap-go').setup()
 
+-- dapui debugging setup
+require('dapui').setup()
+local dap, dapui = require("dap"), require("dapui")
+dap.listeners.after.event_initialized["dapui_config"] = function()
+  dapui.open()
+end
+dap.listeners.before.event_terminated["dapui_config"] = function()
+  dapui.close()
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+  dapui.close()
+end
+]]
 
