@@ -20,20 +20,25 @@ return require('packer').startup(function(use)
   use 'nvim-lualine/lualine.nvim'
   use 'nvim-treesitter/nvim-treesitter'
   use {
-    "windwp/nvim-autopairs",
-      config = function() require("nvim-autopairs").setup {} end
+    "windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end
   }
   use {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.0',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-  -- lsp
+
+  -- lsp/dap
   use {
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
-      "neovim/nvim-lspconfig",
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+    "mfussenegger/nvim-dap",
+    "jayp0521/mason-nvim-dap.nvim",
   }
+
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+
   -- completion
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp'
