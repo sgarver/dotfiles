@@ -17,6 +17,10 @@ SAVEHIST=50000
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$HOME/.local/share/omarchy/bin:$PATH"
 #eval "$(~/.local/bin/mise activate zsh)"
